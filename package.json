@@ -1,0 +1,28 @@
+{
+  "name": "onefeed",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "feedme": "^1.2.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0",
+    "rss-feed-emitter": "^2.0.0",
+    "socket.io": "^2.1.0",
+    "socket.io-client": "^2.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify-es": "^1.0.1",
+    "pump": "^3.0.0",
+    "uglify-es": "^3.3.9"
+  }
+}

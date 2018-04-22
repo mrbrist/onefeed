@@ -1,0 +1,121 @@
+/* headlong SCSS */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,800");
+#header {
+  background-color: #F5F5F5;
+  height: 2vh;
+  padding: 0.5vh 20vw 0.5vh 20vw;
+  position: fixed;
+  width: 60vw; }
+  @media screen and (max-width: 425px) {
+    #header {
+      padding: 0.5vh 1vw 0.5vh 1vw;
+      width: 100vw; } }
+  #header #logo {
+    display: inline-block;
+    color: #616161;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2vh;
+    text-transform: uppercase;
+    font-weight: 800;
+    float: left; }
+  #header #login {
+    display: inline-block;
+    color: #2962FF;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2vh;
+    text-transform: uppercase;
+    font-weight: 600;
+    float: right; }
+
+#mainContainer {
+  padding-right: 20vw;
+  padding-left: 20vw;
+  padding-top: 3vh;
+  height: 97vh;
+  font-family: "Open Sans", sans-serif; }
+  @media screen and (max-width: 425px) {
+    #mainContainer {
+      padding-right: 1vw;
+      padding-left: 1vw; } }
+  #mainContainer #article {
+    width: 100%;
+    display: inline-block;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-size: 10pt;
+    border-bottom: #e1e1e1 solid 1px; }
+    #mainContainer #article #title {
+      color: #000000;
+      font-weight: 600;
+      padding-right: 0.5vw;
+      text-decoration: none; }
+    #mainContainer #article #title:after {
+      content: "\00a0 "; }
+    #mainContainer #article #source {
+      color: #cdcdcd;
+      text-decoration: none; }
+    #mainContainer #article #source:hover {
+      text-decoration: underline;
+      cursor: pointer; }
+    #mainContainer #article #author {
+      display: block;
+      font-size: 8pt;
+      padding-bottom: 0.5vh;
+      color: #8d8d8d; }
+    #mainContainer #article #age {
+      display: block;
+      color: #2962FF;
+      font-weight: 600;
+      font-size: 8pt;
+      padding-top: 0.5vh; }
+    #mainContainer #article #desc {
+      display: block;
+      color: #616161;
+      font-size: 9pt;
+      padding-top: 0.5vh; }
+  #mainContainer #errorContainer {
+    width: 100%;
+    display: inline-block;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-size: 12pt;
+    text-align: center; }
+    #mainContainer #errorContainer #error {
+      color: #000000;
+      font-weight: 600; }
+
+.spinner {
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh; }
+
+.spinner > div {
+  width: 2vh;
+  height: 2vh;
+  background-color: #2962FF;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1); } }
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }

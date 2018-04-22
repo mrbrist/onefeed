@@ -1,0 +1,169 @@
+/* headlong SCSS */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800');
+
+$font: 'Open Sans', sans-serif;
+$color-black: #000000;
+$color-grey: #616161;
+$color-accent: #2962FF;
+$color-lightgrey: #F5F5F5;
+$color-seen: rgba(0, 245, 0, 0.11);
+
+$header-fontSize: 2vh;
+$header-top: 0.5vh;
+$header-bottom: 0.5vh;
+$gutter-left: 20vw;
+$gutter-right: 20vw;
+$break-mobile: 425px;
+$header-height: $header-top + $header-fontSize;
+$header-width: (100vw - ($gutter-right + $gutter-left));
+$header-minWidth: 100vw;
+$gutter-left-mobile: 1vw;
+$gutter-right-mobile: 1vw;
+$article-top: 1.5vh;
+$article-sourceColor: #cdcdcd;
+$article-authorSize: 8pt;
+$article-authorBottom: 0.5vh;
+$article-size: 10pt;
+$article-showImageSize: 9pt;
+$author-titleRight: 0.5vw;
+
+$mainContainer-height: (100vh - $header-fontSize - ($header-top + $header-bottom));
+
+#header {
+  background-color: $color-lightgrey;
+  height: $header-fontSize;
+  padding: $header-top $gutter-right $header-bottom $gutter-left;
+  position: fixed;
+  width: $header-width;
+  @media screen and (max-width: $break-mobile) {
+    padding: $header-top $gutter-right-mobile $header-bottom $gutter-left-mobile;
+    width: $header-minWidth;
+  }
+  #logo {
+    display:inline-block;
+    color: $color-grey;
+    font-family: $font;
+    font-size: $header-fontSize;
+    text-transform: uppercase;
+    font-weight: 800;
+    float: left;
+  }
+  #login {
+    display:inline-block;
+    color: $color-accent;
+    font-family: $font;
+    font-size: $header-fontSize;
+    text-transform: uppercase;
+    font-weight: 600;
+    float: right;
+  }
+}
+#mainContainer {
+  padding-right: $gutter-right;
+  padding-left: $gutter-left;
+  padding-top: $header-height + $header-top;
+  height: $mainContainer-height;
+  font-family: $font;
+  @media screen and (max-width: $break-mobile) {
+    padding-right: $gutter-right-mobile;
+    padding-left: $gutter-left-mobile;
+  }
+  #article {
+    width: 100%;
+    //background-color: $color-lightgrey;
+    display: inline-block;
+    padding-top: $article-top;
+    padding-bottom: $article-top;
+    font-size: $article-size;
+    border-bottom: lighten( $color-grey, 50% ) solid 1px;
+    #title {
+      color: $color-black;
+      font-weight: 600;
+      padding-right: $author-titleRight;
+      text-decoration: none;
+    }
+    #title:after { content: "\00a0 "; }
+    #source {
+      color: $article-sourceColor;
+      text-decoration: none;
+    }
+    #source:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    #author {
+      display: block;
+      font-size: $article-authorSize;
+      padding-bottom: $article-authorBottom;
+      color: darken($article-sourceColor, 25%);
+    }
+    #age {
+      display: block;
+      color: $color-accent;
+      font-weight: 600;
+      font-size: $article-authorSize;
+      padding-top: $article-authorBottom;
+    }
+    #desc {
+      display: block;
+      color: $color-grey;
+      //font-weight: 600;
+      font-size: $article-showImageSize;
+      padding-top: $article-authorBottom;
+    }
+  }
+  #errorContainer {
+    width: 100%;
+    //background-color: $color-lightgrey;
+    display: inline-block;
+    padding-top: $article-top;
+    padding-bottom: $article-top;
+    font-size: $article-size+2;
+    text-align: center;
+    #error {
+      color: $color-black;
+      font-weight: 600;
+    }
+  }
+}
+
+.spinner {
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+.spinner > div {
+  width: 2vh;
+  height: 2vh;
+  background-color: $color-accent;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+}
